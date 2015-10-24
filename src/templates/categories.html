@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+{% if name %}
+You are viewing {{ name }} 
+
+{% else %}
+
+You have not specified a category
+{% endif %}
+
+
+{% for t in TOPIC_DICT["Movies"] %}
+
+<div class="row">
+  <div class="col-md-4">
+    <a href="{{t[5]}}" class="thumbnail">
+	<img src="{{t[5]}}" alt="Pulpit Rock" style="width:250px;height:600px">
+      <p>{{t[0]}}, {{t[1]}}, {{t[2]}}</p> 
+    </a>
+  </div>
+  </div>
+{% endfor %}
+{% endblock %}
