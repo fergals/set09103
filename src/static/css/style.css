@@ -1,0 +1,11 @@
+.floating-div{
+    float: left;
+    width: 209x;
+    height: 350px;
+	padding:5px;
+}
+
+.description{
+	height:100px;
+	font-size:10px;
+}

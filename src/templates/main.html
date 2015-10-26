@@ -1,67 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <title>Movies Database</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-</head>
-<body>
+{% extends "header.html" %}
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Napier Movie Catalogue</a>
-    </div>
+{% block body %}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">homepage<span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">What kind of movie are you looking for?<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/movies/all/">Movies</a></li>
-			<li><a href="/movies/studios/">Movie Studios</a></li>
-			<li><a href="/movies/release-date/">Release Date</a></li>
-			<li><a href="/movies/upcoming/">Upcoming Releases</a></li>
-			<li role="separator" class="divider"></li>
-            <li><a href="/tv-shows/">TV Shows</a></li>
-			<li><a href="/tv-shows/studios/">Movie Studios</a></li>
-			<li><a href="/tv-shows/release-date/">Release Date</a></li>
-			<li><a href="/tv-shows/upcoming/">Upcoming Releases</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="signup.html">Signup</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-	
-<div> {% block body %}{% endblock %}</div>
+<h3>Database has connected. Success!!</h3>
 
-	
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
-</body>
 
-</html>
+{% for movie in movies %}
+
+<div>
+  <div class="well" style="width:220px; height:312px; float:left; margin:10px; padding:5px;">
+	<img src="{{ movie.poster }}" alt="uh oh" style="width:209px;height:300px">
+  </div>
+{% endfor %}
+
+{% endblock %}
