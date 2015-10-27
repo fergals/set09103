@@ -4,10 +4,13 @@
 
 {% for movie in movies %}
 
-<div>
-  <div class="well" style="width:220px; height:312px; float:left; margin:10px; padding:5px;">
-	<img src="{{ movie.poster }}" alt="uh oh" style="width:209px;height:300px">
-  </div>
+  <div class="ih-item square effect3 bottom_to_top" style="width:220px; height:312px; float:left; margin:10px; padding:5px;">
+  <a href="/movies/{{ movie.id}}">
+	<div class="img">
+	<img src="{{ movie.poster }}" alt="{{ movie.movie_name }}"></div>
+	<div class="info">
+	<h3>{{ movie.movie_name }}</h3>
+  </div></a></div>
 {% endfor %}
 
 {% endblock %}

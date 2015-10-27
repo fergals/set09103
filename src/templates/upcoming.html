@@ -4,11 +4,16 @@
 
 {% if name %}
 
-You are currently viewing the { name }} genre 
+<div class="input-group">
+  <div class="input-group-btn">
+  </div>
+  <div class="form-control" aria-label="...">You are currently viewing {{ name }} movies
+</div>
+</div>
 
 {% else %}
 
-You have not specified a category
+You have not specified a category or page
 
 {% endif %}
 
@@ -16,7 +21,7 @@ You have not specified a category
 
 <div>
   <div class="well" style="width:220px; height:312px; float:left; margin:10px; padding:5px;">
-	<img src="{{ movie.poster }}" alt="uh oh" style="width:209px;height:300px">
+	<a href="/movies/{{ movie.id}}"><img src="{{ movie.poster }}" alt="uh oh" style="width:209px;height:300px"></a>
   </div>
 {% endfor %}
 

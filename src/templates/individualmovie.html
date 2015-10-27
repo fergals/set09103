@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+{% for movie in movies %}
+
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information about {{ movie.movie_name }}</h3>
+  </div>
+  <div class="panel-body">
+    <img class="pull-left" src="{{ movie.poster }}" alt="{{ movie.movie_name }}" style="width:209px;height:300px;margin:5px">
+	<p><strong>Synopsis: </strong>{{ movie.synopsis }}<br><br>
+	<strong>Director: </strong>{{ movie.director }}<br><br>
+	<strong>Gross: </strong>{{ movie.gross }}<br><br>
+	<strong>Studio: </strong> {{ movie.studio }}<br><br>
+	<strong>Year Released: </strong>{{ movie.year }}<br><br>
+	<strong>Rating:</strong> <img src="/static/images/stars/{{ movie.rating }}.png" alt="{{ movie.rating }} stars"></p>
+  </div>
+</div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+
+interesting fact

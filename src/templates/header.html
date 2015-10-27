@@ -5,6 +5,8 @@
     <title>Movies Database</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/ihover.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -33,11 +35,17 @@
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movie Genres<span class="caret"></span></a>
           <ul class="dropdown-menu">
+		  <li><a href="/movies/genres/Action/">Action</a></li>
+		  <li><a href="/movies/genres/Adventure/">Adventure</a></li>
             <li><a href="/movies/genres/Crime/">Crime</a></li>
             <li><a href="/movies/genres/Comedy/">Comedy</a></li>
             <li><a href="/movies/genres/Drama/">Drama</a></li>
+			<li><a href="/movies/genres/Family/">Family</a></li>
+			<li><a href="/movies/genres/Horror/">Horror</a></li>
+			<li><a href="/movies/genres/Romance/">Romance</a></li>
 			<li><a href="/movies/genres/Science-Fiction/">Science Fiction</a></li>
 			<li><a href="/movies/genres/Superhero/">Superhero</a></li>
+			<li><a href="/movies/genres/Thriller/">Thriller</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Most Popular Genres</a></li>
             <li role="separator" class="divider"></li>
@@ -52,17 +60,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="#">About</a></li>
       </ul>
     </div>
   </div>
