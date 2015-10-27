@@ -2,6 +2,16 @@
 
 {% block body %}
 
+{% if name %}
+
+You are currently viewing the { name }} genre 
+
+{% else %}
+
+You have not specified a category
+
+{% endif %}
+
 {% for movie in movies %}
 
 <div>

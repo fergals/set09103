@@ -10,7 +10,6 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -21,20 +20,24 @@
       <a class="navbar-brand" href="/">Napier Movie Catalogue</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">homepage<span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">What kind of movie are you looking for?<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore Movies<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/movies/action/">Action</a></li>
-            <li><a href="/movies/adventure/">Adventure</a></li>
-            <li><a href="/movies/animation/">Animation</a></li>
-			<li><a href="/movies/biography/">Biography</a></li>
-			<li><a href="/movies/comedy/">Comedy</a></li>
-			<li><a href="/movies/crime/">Crime</a></li>
-			<li><a href="/movies/documentary">Documentary</a></li>
+            <li><a href="/movies/top-rated/">Top Rated</a></li>
+            <li><a href="/movies/upcoming/">Upcoming Movies</a></li>
+          </ul>
+        </li>
+		
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movie Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/movies/genres/Crime/">Crime</a></li>
+            <li><a href="/movies/genres/Comedy/">Comedy</a></li>
+            <li><a href="/movies/genres/Drama/">Drama</a></li>
+			<li><a href="/movies/genres/Science-Fiction/">Science Fiction</a></li>
+			<li><a href="/movies/genres/Superhero/">Superhero</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Most Popular Genres</a></li>
             <li role="separator" class="divider"></li>
@@ -61,8 +64,8 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 	
 <div> {% block body %}{% endblock %}</div>
