@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def homepage(name=None):
     g.db = connect_db()
-    cur = g.db.execute('select id, movie_name, poster from movies')  #selects data from database
+    cur = g.db.execute('select id, movie_name, poster from movies order by random() limit 14')  #selects data from database
     movies = [dict(id=row[0], movie_name=row[1], poster=row[2]) for row in cur.fetchall()] # adds data to dictionary
     g.db.close()
     return render_template('main.html', movies=movies, name=name)
@@ -38,8 +38,8 @@ def upcoming(name='Upcoming'):
 @app.route('/movies/top-rated/')
 def toprated(name='Top Rated'):
     g.db = connect_db()
-    cur = g.db.execute('select id, movie_name, poster from movies where rating = "5"')
-    movies = [dict(id=row[0], movie_name=row[1], poster=row[2]) for row in cur.fetchall()]
+    cur = g.db.execute('select id, movie_name, poster, rating from movies where rating = 5')
+    movies = [dict(id=row[0], movie_name=row[1], poster=row[2], rating=row[3]) for row in cur.fetchall()]
     g.db.close()
     return render_template('toprated.html', movies=movies, name=name)
 
