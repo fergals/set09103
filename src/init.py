@@ -54,7 +54,19 @@ def init_db():
 
 @app.errorhandler(404)
 def page_not_found(error):
-	return render_template("404.html")
+	return render_template("404.html"), 404
+	
+@app.errorhandler(400)
+def page_not_found(error):
+	return render_template("othererror.html"), 400
+	
+@app.errorhandler(401)
+def page_not_found(error):
+	return render_template("othererror.html"), 401
+	
+@app.errorhandler(500)
+def page_not_found(error):
+	return render_template("othererror.html"), 500
 
 def main():
     init_db()
